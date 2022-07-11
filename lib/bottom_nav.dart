@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/screens/home.dart';
-import 'package:ui_app/screens/manage_accounts.dart';
+import 'package:ui_app/screens/cart_screen.dart';
 import 'package:ui_app/screens/more.dart';
-import 'package:ui_app/screens/register.dart';
-import 'package:ui_app/screens/settings.dart';
-import 'package:ui_app/screens/shopping_cart.dart';
+import 'package:ui_app/screens/shopping_screen.dart';
+import 'screens/filters.dart';
 
-class Bottom_nav extends StatefulWidget {
+class BottomNav extends StatefulWidget {
+  const BottomNav({Key? key}) : super(key: key);
+
   @override
-  _Bottom_navState createState() => _Bottom_navState();
+  State<BottomNav> createState() => _BottomNavState();
 }
 
-class _Bottom_navState extends State<Bottom_nav> {
+class _BottomNavState extends State<BottomNav> {
   int _currentIndex = 0;
   final screens = [
-    Home(),
-    ShoppingCart(),
-    ManageAccounts(),
-    Settings(),
-    RegisterPage()
+    // const Home(),
+    const ShoppingScreen(),
+    const CartScreen(),
+    // const ProductDetails(),
+    // const ReviewScreen(),
+    const FilterPage(),
+    const More()
   ];
 
   @override
@@ -69,7 +71,7 @@ class _Bottom_navState extends State<Bottom_nav> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.more_horiz_outlined,
-              size: 20,
+              size: 40,
               color: Colors.grey,
             ),
             label: '',

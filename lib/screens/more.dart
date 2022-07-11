@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../mycontainer_reg.dart';
+import 'package:ui_app/mycontainer_reg.dart';
+import 'package:ui_app/reusable_widgets/resuable.dart';
 
 class More extends StatefulWidget {
   const More({Key? key}) : super(key: key);
@@ -13,30 +13,8 @@ class _MoreState extends State<More> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
-        child: AppBar(
-          title: const Text(''),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color(0XFFA1282A),
-                  Color.fromARGB(255, 164, 53, 52),
-                  Color(0XFF711F2C),
-
-                  // Color(0XFFEABA39),
-                  // Color(0XFFE5A435),
-                  // Color(0XFFD35E2D),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-      body: Container(
+      appBar: CustomAppBar(context, "", () {}),
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Column(
@@ -74,7 +52,7 @@ class _MoreState extends State<More> {
                     ))
               ],
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             const MyContainer()
           ],
         ),

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:ui_app/screens/banking.dart';
+import 'package:ui_app/notification.dart';
+import 'package:ui_app/screens/otp_screen.dart';
+import 'package:ui_app/productdescription/description.dart';
 
 class MyContainer extends StatelessWidget {
   const MyContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: MediaQuery.of(context).size.width * 0.8,
         child: Column(children: [
           Row(
@@ -18,7 +23,12 @@ class MyContainer extends StatelessWidget {
                 width: 20,
               ),
               MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OtpScreen()));
+                  },
                   child: const Text(
                     "Messages",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
@@ -28,14 +38,19 @@ class MyContainer extends StatelessWidget {
           Row(
             children: [
               const Icon(
-                Icons.message,
+                Icons.notification_important,
                 color: Color.fromARGB(255, 109, 102, 102),
               ),
               const SizedBox(
                 width: 20,
               ),
               MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NotificationPage()));
+                  },
                   child: const Text(
                     "Notifications",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
@@ -44,14 +59,19 @@ class MyContainer extends StatelessWidget {
           ),
           Row(children: [
             const Icon(
-              Icons.shopping_cart,
+              Icons.account_balance,
               color: Color.fromARGB(255, 109, 102, 102),
             ),
             const SizedBox(
               width: 20,
             ),
             MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BankingPage()));
+                },
                 child: const Text(
                   "Account Details",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
@@ -75,14 +95,19 @@ class MyContainer extends StatelessWidget {
           Row(
             children: [
               const Icon(
-                Icons.shopping_cart,
+                Icons.settings,
                 color: Color.fromARGB(255, 109, 102, 102),
               ),
               const SizedBox(
                 width: 20,
               ),
               MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProductDetails()));
+                  },
                   child: const Text(
                     "Settings",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),

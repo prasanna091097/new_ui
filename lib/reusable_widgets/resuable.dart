@@ -16,7 +16,8 @@ Container uiButton(BuildContext context, String title, Function onTap) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.amber;
             }
-            return const Color(0XFFD35E2D);
+            return const Color(0XFF711F2C);
+            //  const Color(0XFFD35E2D);
           }),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
@@ -66,4 +67,29 @@ Image logoWidget(String imageName) {
     height: 300,
     color: Colors.white,
   );
+}
+
+// ignore: non_constant_identifier_names
+CustomAppBar(BuildContext context, String title, Function onTap) {
+  return AppBar(
+      toolbarHeight: 60,
+      elevation: 0,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0XFFA1282A),
+                Color.fromARGB(255, 164, 53, 52),
+                Color(0XFF711F2C),
+              ]),
+        ),
+      ),
+      title: Center(child: Text(title, textAlign: TextAlign.center)),
+      leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          }));
 }

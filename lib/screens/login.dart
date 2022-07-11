@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:ui_app/screens/register.dart';
+import 'package:ui_app/bottom_nav.dart';
 import 'package:ui_app/reusable_widgets/resuable.dart';
-
-import 'bottom_nav.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -34,35 +31,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80.0),
-        child: AppBar(
-          title: const Text(''),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color(0XFFA1282A),
-                  Color.fromARGB(255, 164, 53, 52),
-                  Color(0XFF711F2C),
-
-                  // Color(0XFFEABA39),
-                  // Color(0XFFE5A435),
-                  // Color(0XFFD35E2D),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-      // ignore: sized_box_for_whitespace
+      appBar: CustomAppBar(context, "", () {}),
       body: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
+        // ignore: avoid_unnecessary_containers
         child: Container(
             child: Column(children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Column(
@@ -86,12 +61,6 @@ class _LoginPageState extends State<LoginPage> {
                     children: <Widget>[
                       ConstrainedBox(
                         constraints: const BoxConstraints.expand(),
-                        child: const Center(
-                          child: Text("yes bro"),
-                        ),
-                      ),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints.expand(),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -111,7 +80,45 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Bottom_nav()));
+                                      builder: (context) => const BottomNav()));
+                            }),
+                          ],
+                        ),
+                      ),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints.expand(),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ListTile(
+                                title: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return "Field is empty";
+                                      }
+                                    },
+                                    controller: _userNameTextController,
+                                    decoration: const InputDecoration(
+                                      hintText: "+0000 000000000000",
+                                    ))),
+                            ListTile(
+                                title: TextFormField(
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return "Password cannot be empty";
+                                      } else if (value.length < 4) {
+                                        return "Password length should atleast 4";
+                                      }
+                                    },
+                                    controller: _passwordTextController,
+                                    decoration: const InputDecoration(
+                                        hintText: "..",
+                                        labelText: "PASSWORD"))),
+                            uiButton(context, "Sign Up", () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const BottomNav()));
                             }),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 180),

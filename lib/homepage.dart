@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/login.dart';
-import 'reusable_widgets/resuable.dart';
+import 'package:ui_app/reusable_widgets/resuable.dart';
+import 'package:ui_app/screens/login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 100,
             ),
-            uiButton(context, "GET STARTED ", () {}),
+            uiButton(context, "GET STARTED", () {}),
             const SizedBox(height: 50),
             signInOption(context, '', () {})
           ],
@@ -65,8 +65,8 @@ Column signInOption(BuildContext context, String title, Function onTap) {
       const SizedBox(height: 20),
       GestureDetector(
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LoginPage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginPage()));
         },
         child: const Text(
           " Sign IN Here",
