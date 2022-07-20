@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ui_app/screens/login.dart';
+import 'package:ui_app/cart_screens_new/widgets/catalog.dart';
+import 'package:ui_app/homepage.dart';
 
 void main() {
   runApp(
     const GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ui development',
-        home: LoginPage()
+        home: CatalogProducts()
         // routes: {
         //   'home': (context) => const HomePage(),
         //   'register': (context) => const RegisterPage(),

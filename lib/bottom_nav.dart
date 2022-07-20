@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/screens/cart_screen.dart';
+import 'package:ui_app/cart_screens_new/screens/cart_screen.dart';
+import 'package:ui_app/cart_screens_new/screens/catalog_screen.dart';
 import 'package:ui_app/screens/more.dart';
-import 'package:ui_app/screens/shopping_screen.dart';
+import 'package:ui_app/screens/review_screen.dart';
 import 'screens/filters.dart';
 
 class BottomNav extends StatefulWidget {
@@ -14,11 +15,9 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int _currentIndex = 0;
   final screens = [
-    // const Home(),
-    const ShoppingScreen(),
+    const CatalogueScreen(),
     const CartScreen(),
-    // const ProductDetails(),
-    // const ReviewScreen(),
+    const ReviewScreen(),
     const FilterPage(),
     const More()
   ];

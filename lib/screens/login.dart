@@ -114,12 +114,12 @@ class _LoginPageState extends State<LoginPage> {
                                     decoration: const InputDecoration(
                                         hintText: "..",
                                         labelText: "PASSWORD"))),
-                            uiButton(context, "Sign Up", () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const BottomNav()));
-                            }),
+                            // uiButton(context, "Sign Up", () {
+                            //   Navigator.push(
+                            //       context,
+                            //       MaterialPageRoute(
+                            //           builder: (context) => const BottomNav()));
+                            // }),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 180),
                               child: TextButton(
