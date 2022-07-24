@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/productdescription/description.dart';
+import 'package:ui_app/widgets/description.dart';
 
 class DetailPage extends StatefulWidget {
   // ignore: prefer_typing_uninitialized_variables

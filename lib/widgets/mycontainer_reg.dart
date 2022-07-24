@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:ui_app/screens/banking.dart';
-import 'package:ui_app/notification.dart';
+import 'package:ui_app/screens/notification.dart';
 import 'package:ui_app/screens/otp_screen.dart';
-import 'package:ui_app/productdescription/description.dart';
+import 'package:ui_app/widgets/description.dart';
 
 class MyContainer extends StatelessWidget {
   const MyContainer({Key? key}) : super(key: key);

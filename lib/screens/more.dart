@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/mycontainer_reg.dart';
+import 'package:ui_app/widgets/mycontainer_reg.dart';
 import 'package:ui_app/reusable_widgets/resuable.dart';
 
 class More extends StatefulWidget {

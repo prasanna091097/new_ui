@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/cart_screens_new/screens/cart_screen.dart';
-import 'package:ui_app/cart_screens_new/screens/catalog_screen.dart';
+import 'package:ui_app/screens/cart_screens.dart';
+import 'package:ui_app/screens/catalog_screens.dart';
 import 'package:ui_app/screens/more.dart';
 import 'package:ui_app/screens/review_screen.dart';
 import 'screens/filters.dart';

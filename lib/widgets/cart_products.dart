@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
-import 'package:ui_app/cart_screens_new/controller/cart_controller.dart';
-import 'package:ui_app/cart_screens_new/model/product_model.dart';
+import '../controller/cart_controller.dart';
+import '../model/product_model.dart';
 
 class CartProducts extends StatelessWidget {
   final CartController controller = Get.find();
@@ -57,59 +57,35 @@ class CartProductCard extends StatelessWidget {
         //crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisSize: MainAxisSize.max,
         children: [
-          Image.network(
-            product.imageUrl,
-            width: 100,
-            height: 80,
-            fit: BoxFit.cover,
+          CircleAvatar(
+            radius: 40,
+            backgroundImage: NetworkImage(product.imageUrl),
           ),
           const SizedBox(
             width: 20,
           ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(product.name),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  '\$${Product.products[index].price}',
-                  style: Theme.of(context).textTheme.headline6,
-                )
-              ],
-            ),
-          ),
-          Row(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.add,
-                  color: Colors.black,
-                ),
-                onPressed: (() {
-                  controller.removeProduct(product);
-                }),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text("$quantity"),
-              const SizedBox(
-                width: 10,
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.remove,
-                  color: Colors.black,
-                ),
-                onPressed: (() {
-                  controller.addProduct(product);
-                }),
+              Text(product.name),
+              Text(
+                '\$${Product.products[index].price}',
+                style:
+                    const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
             ],
-          )
+          ),
+          IconButton(
+              onPressed: (() {
+                controller.removeProduct(product);
+              }),
+              icon: const Icon(Icons.remove_circle)),
+          Text("$quantity"),
+          IconButton(
+              onPressed: (() {
+                controller.addProduct(product);
+              }),
+              icon: const Icon(Icons.add_circle))
         ],
       ),
     );

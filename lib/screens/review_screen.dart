@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:ui_app/review_screens/review_content_model.dart';
-import 'package:ui_app/review_screens/rivew_widget.dart';
+
+import 'package:ui_app/model/review_content_model.dart';
+import 'package:ui_app/reusable_widgets/resuable.dart';
+import 'package:ui_app/widgets/rivew_widget.dart';
 
 class ReviewScreen extends StatefulWidget {
   const ReviewScreen({Key? key}) : super(key: key);
@@ -17,18 +18,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Reviews',
-        ),
-        centerTitle: true,
-        flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-          Color.fromARGB(255, 214, 165, 29),
-          Color.fromARGB(255, 184, 73, 17)
-        ], begin: Alignment.topCenter, end: Alignment.topRight))),
-      ),
+      appBar: CustomAppBar(context, "Reviews", () {}),
       backgroundColor: kWhiteColor,
       body: ListView.builder(
         padding: const EdgeInsets.only(bottom: 10.0, top: 8.0),

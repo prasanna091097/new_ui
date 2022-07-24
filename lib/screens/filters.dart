@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ui_app/reusable_widgets/resuable.dart';
 
 class FilterPage extends StatefulWidget {
@@ -63,9 +63,12 @@ class _FilterPageState extends State<FilterPage> {
                 height: 120,
                 child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
+                    child:
+                     
+                        Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: generateImageTiles(),
+                     
                     ))),
             Padding(
               padding: const EdgeInsets.all(18.0),
@@ -123,10 +126,7 @@ class _FilterPageState extends State<FilterPage> {
                 colorpallete(Colors.cyan),
                 colorpallete(Colors.green),
               ],
-            ),
-          ],
-        ),
-      ),
+            ),],),),
     );
   }
 
@@ -136,15 +136,13 @@ class _FilterPageState extends State<FilterPage> {
       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: color),
     );
   }
-
-  CircleAvatar colorpallete(Color color) {
+CircleAvatar colorpallete(Color color) {
     return CircleAvatar(
       radius: 20,
       backgroundColor: color,
     );
   }
-
-  Widget box(String title, Color backgroundcolor) {
+ Widget box(String title, Color backgroundcolor) {
     return Container(
         margin: const EdgeInsets.all(10),
         width: 180,

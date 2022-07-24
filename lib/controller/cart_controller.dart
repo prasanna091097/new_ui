@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:ui_app/cart_screens_new/model/product_model.dart';
+
+import '../model/product_model.dart';
 
 class CartController extends GetxController {
   final _products = {}.obs;
@@ -14,7 +15,7 @@ class CartController extends GetxController {
     Get.snackbar(
       "PRODUCT IS ADDED",
       "You have added the ${product.name} ",
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       snackPosition: SnackPosition.BOTTOM,
     );
   }

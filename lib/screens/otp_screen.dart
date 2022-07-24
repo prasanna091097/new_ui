@@ -13,6 +13,7 @@ class _OtpScreenState extends State<OtpScreen> {
   final TextEditingController _fieldTwo = TextEditingController();
   final TextEditingController _fieldThree = TextEditingController();
   final TextEditingController _fieldFour = TextEditingController();
+  // ignore: unused_field
   String? _otp;
   @override
   Widget build(BuildContext context) {
@@ -104,26 +105,13 @@ class OtpInput extends StatelessWidget {
         controller: controller,
         maxLength: 1,
         cursorColor: Theme.of(context).primaryColor,
-        decoration: const
-            //  InputDecoration(
-            //   enabledBorder: OutlineInputBorder(
-            //     borderSide: BorderSide(
-            //       color: Color(0XFF7F3134),
-            //     ),
-            //   ),
-            //   focusedBorder: OutlineInputBorder(
-            //     borderSide: BorderSide(
-            //       color: Color(0XFF7F3134),
-            //     ),
-            //   ),
-            // ),
-            InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Color(0XFF7F3134),
-                )),
-                counterText: '',
-                hintStyle: TextStyle(color: Colors.black, fontSize: 20.0)),
+        decoration: const InputDecoration(
+            border: OutlineInputBorder(
+                borderSide: BorderSide(
+              color: Color(0XFF7F3134),
+            )),
+            counterText: '',
+            hintStyle: TextStyle(color: Colors.black, fontSize: 20.0)),
         onChanged: (value) {
           if (value.length == 1) {
             FocusScope.of(context).nextFocus();

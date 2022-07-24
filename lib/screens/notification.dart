@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'reusable_widgets/resuable.dart';
+import '../reusable_widgets/resuable.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
